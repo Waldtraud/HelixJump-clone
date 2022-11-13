@@ -6,18 +6,20 @@ using Random = System.Random;
 
 public class LevelGenerator : MonoBehaviour
 {
-    [SerializeField] GameObject[] _platformsPrefabs;
-    [SerializeField] GameObject _firstPlatform;
-    [SerializeField] int _maxPlatforms;
-    [SerializeField] int _minPlatforms;
-    [SerializeField] float _distanceBetweenPlatforms;
-    [SerializeField] Transform _finishPlatform;
-    [SerializeField] Transform _cylinderLength;
-    [SerializeField] Game _game;
+    [SerializeField] public Game Game;
+
+    [SerializeField] public GameObject[] _platformsPrefabs;
+    [SerializeField] public GameObject _firstPlatform;
+    [SerializeField] public int _maxPlatforms;
+    [SerializeField] public int _minPlatforms;
+    [SerializeField] public float _distanceBetweenPlatforms;
+    [SerializeField] public Transform _finishPlatform;
+    [SerializeField] public Transform _cylinderLength;
+    
 
     private void Awake()
     {
-        int levelIndex = _game.LevelIndex;
+        int levelIndex = Game.LevelIndex;
         Random random = new Random(levelIndex);
         int platformsCount = RandomRange(random, _minPlatforms, _maxPlatforms + 1);
 

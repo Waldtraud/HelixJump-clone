@@ -23,6 +23,4 @@ public class LoseScreen : Screen
         _slider.SetActive(false);
         _button.SetActive(false);
     }
-
-
 }

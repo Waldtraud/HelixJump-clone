@@ -6,21 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    public Controls Control;
-
-    public State CurrentState { get; private set; }
+    [SerializeField] public Controls Control;
+    public State CurrentState { get; private set; } 
     public enum State
     {
         Playing,
         Won,
         Loss
     }
+    
+    private const string LevelIndexKey = "LevelIndex";
+
     private void Start()
     {
         EventManager.OnPlayerReachFinish.AddListener(OnPlayerRechFinish);
         EventManager.OnPlayerDied.AddListener(OnPlayingDied);
     }
-
 
     public void OnPlayingDied()
     {
@@ -28,15 +29,9 @@ public class Game : MonoBehaviour
             return;
 
         CurrentState = State.Loss;
-        Control.enabled = false;
-        Debug.Log("Game Over");       
+        Control.enabled = false;         
     }
-
-   /* public void DestroyPlatform(Platform platform)
-    {
-        Destroy(platform);
-    }*/
-
+   
     public void OnPlayerRechFinish()
     {
         if (CurrentState != State.Playing)
@@ -44,8 +39,8 @@ public class Game : MonoBehaviour
 
         CurrentState = State.Won;
         Control.enabled = false;
-       LevelIndex++;
-        Debug.Log("You Won");       
+
+       LevelIndex++;            
     }
 
     public int LevelIndex
@@ -56,9 +51,7 @@ public class Game : MonoBehaviour
             PlayerPrefs.SetInt(LevelIndexKey, value);
             PlayerPrefs.Save();
         }
-    }
-
-    private const string LevelIndexKey = "LevelIndex";
+    }   
 
     public void ReloadLevel()
     {

@@ -5,31 +5,13 @@ using UnityEngine;
 public class ScreenManager : MonoBehaviour
 {
     private Screen _activScreen;
-    private List<Screen> _screens;   
-
+    private List<Screen> _screens;
 
     private void Start()
     {
         _screens = new List<Screen>();
         _screens.AddRange(GetComponentsInChildren<Screen>());
 
-        foreach (var screen in _screens)
-        {
-            if (screen is StartScreen)
-            {
-                screen.ShowScreen();
-                _activScreen = screen;
-            }
-            else
-            {
-                screen.HideScreen();
-            }
-        }
-    }
-
-    public void StartGame()
-    {
-        _activScreen.HideScreen();
 
         foreach (var screen in _screens)
         {
@@ -37,7 +19,11 @@ public class ScreenManager : MonoBehaviour
             {
                 screen.ShowScreen();
                 _activScreen = screen;
-                break;
+            }
+
+            else
+            {
+                screen.HideScreen();
             }
         }
     }
@@ -71,6 +57,4 @@ public class ScreenManager : MonoBehaviour
             }
         }
     }
-
-
 }

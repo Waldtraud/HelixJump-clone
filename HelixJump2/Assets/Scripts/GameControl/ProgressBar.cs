@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class ProgressBar : MonoBehaviour
 {
-    [SerializeField] Player _player;
-    [SerializeField] Transform _finishPlatform;
-    [SerializeField] Slider _slider;
-    [SerializeField] float _accptebleFinishDistance = 1f;
+    [SerializeField] public Player _player;
+    [SerializeField] public Transform _finishPlatform;
+    [SerializeField] public Slider _slider;
+    [SerializeField] public float _accptebleFinishDistance;
 
     private float _startPosition;
     private float _minReachedY;
