@@ -115,9 +115,7 @@ MonoBehaviour:
   _isGood: 0
   _goodMaterial: {fileID: 2100000, guid: ab3f729135b238c40b9fbba71b62c622, type: 2}
   _badMaterial: {fileID: 2100000, guid: ad10506bf4b700747b68ba00b25eedca, type: 2}
-  movementSpeed: 10
   _rigidbody: {fileID: -5009991555286564639}
-  _radiusOfExplosion: 1
 --- !u!54 &-5009991555286564639
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -12,6 +12,23 @@ public class ScreenManager : MonoBehaviour
         _screens = new List<Screen>();
         _screens.AddRange(GetComponentsInChildren<Screen>());
 
+        foreach (var screen in _screens)
+        {
+            if (screen is StartScreen)
+            {
+                screen.ShowScreen();
+                _activScreen = screen;
+            }
+            else
+            {
+                screen.HideScreen();
+            }
+        }
+    }
+
+    public void StartGame()
+    {
+        _activScreen.HideScreen();
 
         foreach (var screen in _screens)
         {
@@ -19,11 +36,7 @@ public class ScreenManager : MonoBehaviour
             {
                 screen.ShowScreen();
                 _activScreen = screen;
-            }
-
-            else
-            {
-                screen.HideScreen();
+                break;
             }
         }
     }

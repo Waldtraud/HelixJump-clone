@@ -13,11 +13,10 @@ public class Platform : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.position.y < transform.position.y)
+        if (other.TryGetComponent(out Player player) && other.transform.position.y < transform.position.y)
         {
             EventManager.SentBrokenPlatforms();
             FallDown();
-
             Destroy(this.gameObject, 0.5f);
         }
     }
@@ -26,6 +25,7 @@ public class Platform : MonoBehaviour
     {
         Rigidbody[] sectors = GetComponentsInChildren<Rigidbody>();
         for (int i = 0; i < sectors.Length; i++)
+
             if (sectors[i] != null)
             {
                 sectors[i].isKinematic = false;

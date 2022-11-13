@@ -384,7 +384,7 @@ RectTransform:
   m_Children:
   - {fileID: 813862424}
   m_Father: {fileID: 360562990}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -463,7 +463,7 @@ RectTransform:
   - {fileID: 1201320786}
   - {fileID: 324350687}
   m_Father: {fileID: 360562990}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -482,10 +482,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74eb0542d264f364093fbdec1c9ad2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 1613966658}
-  _finishPlatform: {fileID: 6425075892945659011, guid: 6744a26603cbf5b41a79770763710f48, type: 3}
-  _slider: {fileID: 248411819}
-  _accptebleFinishDistance: 1
+  Player: {fileID: 1613966658}
+  FinishPlatform: {fileID: 294403828}
+  Slider: {fileID: 248411819}
+  AccptebleFinishDistance: -13.81
 --- !u!114 &248411819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,10 +973,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 248411817}
   - {fileID: 1341920180}
   - {fileID: 1729035141}
   - {fileID: 236400201}
-  - {fileID: 248411817}
   m_Father: {fileID: 252761624}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -997,7 +997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca45052fa11f214eb7d485cd541fd79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _game: {fileID: 1541675273}
+  Game: {fileID: 1541675273}
   _slider: {fileID: 248411816}
   _levelCurrentNumber: {fileID: 1729035140}
   _levelNextNumber: {fileID: 236400200}
@@ -2117,7 +2117,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 360562990}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -2233,8 +2233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e896fa4ff2e67614e93b502fa6f8ea9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentText: {fileID: 0}
-  _nextLevelText: {fileID: 0}
+  _currentText: {fileID: 335441283}
+  _nextLevelText: {fileID: 813862425}
   _game: {fileID: 1541675273}
 --- !u!114 &1341920184
 MonoBehaviour:
@@ -2590,7 +2590,7 @@ RectTransform:
   m_Children:
   - {fileID: 335441282}
   m_Father: {fileID: 360562990}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
