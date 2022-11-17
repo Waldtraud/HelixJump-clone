@@ -9,6 +9,7 @@ public class EventManager
     public static UnityEvent OnBrokenPlatformCount = new UnityEvent();
     public static UnityEvent OnPlayerDied = new UnityEvent();
     public static UnityEvent OnPlayerReachFinish = new UnityEvent();
+    public static UnityEvent OnPlayerReachPlatform = new UnityEvent();
 
     public static void SentBrokenPlatforms()
     {
@@ -23,5 +24,9 @@ public class EventManager
     public static void SentPlayerReachFinish()
     {
         OnPlayerReachFinish.Invoke();
+    }
+    public static void SentPlayerReachPlatform()       
+    {
+        OnPlayerReachPlatform.Invoke();
     }
 }

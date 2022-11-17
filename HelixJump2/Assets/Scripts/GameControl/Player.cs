@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float _bounceSpeed;
-    public Rigidbody _playerBody;
-    public Game _game;
-    public Platform CurrentPlatform;
+    private AudioSource _bounceSound;
+    [SerializeField] public Game Game;
+    [SerializeField] public Platform CurrentPlatform;
+
+    [SerializeField] private float _bounceSpeed;
+    [SerializeField] private Rigidbody _playerBody;
+   
+
 
     private void Start()
     {
+        _bounceSound = GetComponent<AudioSource>();
         EventManager.OnPlayerReachFinish.AddListener(ReachFinish);
         EventManager.OnPlayerDied.AddListener(Die);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        AddBounceSound();
     }
 
     public void Bounce()
@@ -28,5 +38,10 @@ public class Player : MonoBehaviour
     {       
         _playerBody.velocity = Vector3.zero;
     }  
+
+    public void AddBounceSound()
+    {
+        _bounceSound.Play();
+    }
    
 }

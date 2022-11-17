@@ -9,7 +9,10 @@ public class Platform : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Player player))
-            player.CurrentPlatform = this;
+        {           
+            player.CurrentPlatform = this;     
+           
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -20,6 +23,7 @@ public class Platform : MonoBehaviour
             Destroy(this.gameObject, 0.5f);
         }
     }
+   
 
     public void FallDown()
     {
