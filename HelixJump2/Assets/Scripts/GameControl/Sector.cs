@@ -40,6 +40,7 @@ public class Sector : MonoBehaviour
             EventManager.SentPlayerDied();
         else
             player.Bounce();
+
     }
 
     private void OnValidate()

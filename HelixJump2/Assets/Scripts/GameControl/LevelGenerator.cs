@@ -8,13 +8,13 @@ public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] public Game Game;
 
-    [SerializeField] public GameObject[] _platformsPrefabs;
-    [SerializeField] public GameObject _firstPlatform;
-    [SerializeField] public int _maxPlatforms;
-    [SerializeField] public int _minPlatforms;
-    [SerializeField] public float _distanceBetweenPlatforms;
-    [SerializeField] public Transform _finishPlatform;
-    [SerializeField] public Transform _cylinderLength;
+    [SerializeField] private GameObject[] _platformsPrefabs;
+    [SerializeField] public GameObject _firstPlatform; 
+    [SerializeField] private int _maxPlatforms;
+    [SerializeField] private int _minPlatforms;
+    [SerializeField] private float _distanceBetweenPlatforms;
+    [SerializeField] private Transform _finishPlatform;
+    [SerializeField] private Transform _cylinderLength;
     
 
     private void Awake()
@@ -54,5 +54,10 @@ public class LevelGenerator : MonoBehaviour
     private Vector3 CalculatePlatformPosition(int platfornIndex)
     {
         return new Vector3(0, -_distanceBetweenPlatforms * platfornIndex, 0);
+    }
+
+    public GameObject[] GetPlatformsList()
+    {
+        return _platformsPrefabs;
     }
 }
