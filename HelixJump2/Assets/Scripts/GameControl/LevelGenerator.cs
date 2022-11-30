@@ -7,12 +7,13 @@ using Random = System.Random;
 public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] public Game Game;
+    [SerializeField] public float _distanceBetweenPlatforms;
 
     [SerializeField] private GameObject[] _platformsPrefabs;
     [SerializeField] public GameObject _firstPlatform; 
     [SerializeField] private int _maxPlatforms;
     [SerializeField] private int _minPlatforms;
-    [SerializeField] private float _distanceBetweenPlatforms;
+   
     [SerializeField] private Transform _finishPlatform;
     [SerializeField] private Transform _cylinderLength;
     

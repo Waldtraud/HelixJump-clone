@@ -1109,7 +1109,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: bd6d0a6ab146d834293074b6cb2603bc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: -2.52
+  m_Pitch: 0
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -3301,10 +3301,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9601fbd113d41644fa86854beb13a257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Game: {fileID: 1541675273}
-  CurrentPlatform: {fileID: 7019301771324729603, guid: ca19f7cc9dac46a4b9165d7b82b1f126, type: 3}
+  _levelGenerator: {fileID: 1778355205}
   _bounceSpeed: 10
+  _numberOfPassedPlatform: 2
   _playerBody: {fileID: 1613966657}
+  Game: {fileID: 1541675273}
+  CurrentPlatform: {fileID: 8704445594778501824, guid: e101412f7295acd4693a4385683989ac, type: 3}
 --- !u!82 &1613966659
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3625,14 +3627,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Game: {fileID: 1541675273}
+  _distanceBetweenPlatforms: 1
   _platformsPrefabs:
-  - {fileID: 175483209950878034, guid: 0f744ad079f98d54b8587d52b54cac1e, type: 3}
-  - {fileID: 195237231973249695, guid: b7bf15ebcfa585142b37f83f38d2a5ec, type: 3}
-  - {fileID: 7019301771324729628, guid: ca19f7cc9dac46a4b9165d7b82b1f126, type: 3}
-  _firstPlatform: {fileID: 7019301771324729628, guid: ca19f7cc9dac46a4b9165d7b82b1f126, type: 3}
-  _maxPlatforms: 10
-  _minPlatforms: 5
-  _distanceBetweenPlatforms: 1.5
+  - {fileID: 8315331715176531920, guid: e101412f7295acd4693a4385683989ac, type: 3}
+  - {fileID: 3799960990686159519, guid: 8f18ef0183fdbc24cbbe204cc8fcec8b, type: 3}
+  - {fileID: 8091860368595976395, guid: 41e460e92d8c5dd4cab91a3712f6823d, type: 3}
+  - {fileID: 8533812855289880546, guid: d67d4a1b245ae694496e3599e680fa39, type: 3}
+  - {fileID: 2696963245112691525, guid: a11849271218f4b47b55c1090a7615df, type: 3}
+  - {fileID: 276044497778905259, guid: 85255502c9728c0408610dbcb6cce93e, type: 3}
+  _firstPlatform: {fileID: 8315331715176531920, guid: e101412f7295acd4693a4385683989ac, type: 3}
+  _maxPlatforms: 15
+  _minPlatforms: 10
   _finishPlatform: {fileID: 294403828}
   _cylinderLength: {fileID: 1203583444}
 --- !u!1 &1779974485

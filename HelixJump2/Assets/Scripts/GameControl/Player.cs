@@ -5,14 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private AudioSource _bounceSound;
+    private float currentContactPoint;
+    private float lastContactPoint;
+
+    [SerializeField] private LevelGenerator _levelGenerator;
+    [SerializeField] private float _bounceSpeed;
+    [SerializeField] private float _numberOfPassedPlatform;
+    [SerializeField] private Rigidbody _playerBody;
+
     [SerializeField] public Game Game;
     [SerializeField] public Platform CurrentPlatform;
-
-
-    [SerializeField] private float _bounceSpeed;
-    [SerializeField] private Rigidbody _playerBody;
-    [SerializeField] private int _platformToPass;
-
 
 
     private void Start()
@@ -20,19 +22,31 @@ public class Player : MonoBehaviour
         _bounceSound = GetComponent<AudioSource>();
         EventManager.OnPlayerReachFinish.AddListener(ReachFinish);
         EventManager.OnPlayerDied.AddListener(Die);
+        EventManager.OnAddPlatformBroke.RemoveListener(Die);
+
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        AddBounceSound();
+         AddBounceSound();
+
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
-        if (!collision.collider.TryGetComponent(out Sector sector) && _platformToPass <0)
-            _platformToPass--;
+    {       
+        currentContactPoint = collision.transform.position.y/3;
 
-        CurrentPlatform.FallDown();
+        float distanceToPass = Mathf.Abs(currentContactPoint - lastContactPoint);
+        
+        if (distanceToPass > _levelGenerator._distanceBetweenPlatforms * _numberOfPassedPlatform)
+        {  
+                    
+            distanceToPass = 0;
+            CurrentPlatform.FallDown();
+            EventManager.SentAddPlatformBroke();
+        }
+
+        lastContactPoint = currentContactPoint;        
     }
 
     public void Bounce()
@@ -53,7 +67,4 @@ public class Player : MonoBehaviour
     {
         _bounceSound.Play();
     }
-
-    
-
 }
