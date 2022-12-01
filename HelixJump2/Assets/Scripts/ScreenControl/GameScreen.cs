@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class GameScreen : Screen
 {
+    [SerializeField] public Game Game;
+
     [SerializeField] private GameObject _slider;
     [SerializeField] private GameObject _levelCurrentNumber;
     [SerializeField] private GameObject _levelNextNumber;
-    [SerializeField] public Game _game;
+    
     public override void ShowScreen()
     {
         _slider.SetActive(true);
@@ -23,10 +25,9 @@ public class GameScreen : Screen
         _levelNextNumber.SetActive(false);
     }
 
-    private void ShowLevelIndex()
+   /*private void ShowLevelIndex()
     {
-        int levelIndex = _game.LevelIndex;
-
-    }
+        int levelIndex = Game.LevelIndex;
+    }*/
 
 }

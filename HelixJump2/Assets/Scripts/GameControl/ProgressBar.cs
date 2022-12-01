@@ -5,24 +5,24 @@ using UnityEngine.UI;
 
 public class ProgressBar : MonoBehaviour
 {
-    [SerializeField] Player _player;
-    [SerializeField] Transform _finishPlatform;
-    [SerializeField] Slider _slider;
-    [SerializeField] float _accptebleFinishDistance = 1f;
+    [SerializeField] public Player Player;
+    [SerializeField] public Transform FinishPlatform;
+    [SerializeField] public Slider Slider;
+    [SerializeField] public float AccptebleFinishDistance;
 
     private float _startPosition;
     private float _minReachedY;
 
     public void Start()
     {
-        _startPosition = _player.transform.position.y;
+        _startPosition = Player.transform.position.y;
     }
 
     public void Update()
     {
-        _minReachedY = Mathf.Min(_minReachedY, _player.transform.position.y);
-        float finishPosition = _finishPlatform.transform.position.y;
-        float result = Mathf.InverseLerp(_startPosition, finishPosition + _accptebleFinishDistance, _minReachedY);
-        _slider.value = result;
+        _minReachedY = Mathf.Min(_minReachedY, Player.transform.position.y);
+        float finishPosition = FinishPlatform.transform.position.y;
+        float result = Mathf.InverseLerp(_startPosition, finishPosition + AccptebleFinishDistance, _minReachedY);
+        Slider.value = result;
     }
 }

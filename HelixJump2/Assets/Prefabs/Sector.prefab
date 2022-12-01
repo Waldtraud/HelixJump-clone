@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6582088429285893211}
   - component: {fileID: -5009991555286564639}
   m_Layer: 0
-  m_Name: sector_helix_jump Variant (3) 1
+  m_Name: Sector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,9 +115,7 @@ MonoBehaviour:
   _isGood: 0
   _goodMaterial: {fileID: 2100000, guid: ab3f729135b238c40b9fbba71b62c622, type: 2}
   _badMaterial: {fileID: 2100000, guid: ad10506bf4b700747b68ba00b25eedca, type: 2}
-  movementSpeed: 10
   _rigidbody: {fileID: -5009991555286564639}
-  _radiusOfExplosion: 1
 --- !u!54 &-5009991555286564639
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,7 +126,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0

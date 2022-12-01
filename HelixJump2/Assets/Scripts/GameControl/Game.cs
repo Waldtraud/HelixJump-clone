@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    public Controls Control;
-
+    [SerializeField] public Controls Control;
+    /*[SerializeField] private LevelGenerator _levelGenerator;
+    [SerializeField] private int _platformToPass;*/
     public State CurrentState { get; private set; }
     public enum State
     {
@@ -15,12 +16,14 @@ public class Game : MonoBehaviour
         Won,
         Loss
     }
+
+    private const string LevelIndexKey = "LevelIndex";
+
     private void Start()
     {
         EventManager.OnPlayerReachFinish.AddListener(OnPlayerRechFinish);
         EventManager.OnPlayerDied.AddListener(OnPlayingDied);
     }
-
 
     public void OnPlayingDied()
     {
@@ -29,13 +32,7 @@ public class Game : MonoBehaviour
 
         CurrentState = State.Loss;
         Control.enabled = false;
-        Debug.Log("Game Over");       
     }
-
-   /* public void DestroyPlatform(Platform platform)
-    {
-        Destroy(platform);
-    }*/
 
     public void OnPlayerRechFinish()
     {
@@ -44,8 +41,8 @@ public class Game : MonoBehaviour
 
         CurrentState = State.Won;
         Control.enabled = false;
-       LevelIndex++;
-        Debug.Log("You Won");       
+
+        LevelIndex++;
     }
 
     public int LevelIndex
@@ -58,11 +55,26 @@ public class Game : MonoBehaviour
         }
     }
 
-    private const string LevelIndexKey = "LevelIndex";
-
     public void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-   
+
+   /* public void DestroyFourthPlatform()
+    {
+        GameObject[] platforms = _levelGenerator.GetPlatformsList();
+        int numberToDestroy;
+
+        for (var i = 0; i < platforms.Length; i++)
+        {
+
+            numberToDestroy = i + _platformToPass + 1;
+            Platform platformToDestroy = platforms[numberToDestroy].GetComponent<Platform>();
+
+            platformToDestroy.FallDown();
+            i = numberToDestroy;
+        }
+    }*/
+
+
 }

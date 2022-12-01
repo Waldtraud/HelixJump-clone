@@ -5,8 +5,7 @@ using TMPro;
 
 public class BrokenPlatformsCount : MonoBehaviour
 {
-    private int _platformCount = 0;
-   
+    private int _platformCount = 0;   
 
     private void Start()
     {

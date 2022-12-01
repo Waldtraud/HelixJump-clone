@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StartScreen : Screen
-{   
-    [SerializeField] private GameObject _text;
-    [SerializeField] private GameObject _touchPanel;
-    [SerializeField] private GameObject _button;
+{
+    [SerializeField] public Game Game;
+
+    [SerializeField] private GameObject _slider;
+    [SerializeField] private GameObject _levelCurrentNumber;
+    [SerializeField] private GameObject _levelNextNumber;
 
     public override void ShowScreen()
     {
-        _text.SetActive(true);
-        _touchPanel.SetActive(true);
-        _button.SetActive(true);
+        _slider.SetActive(true);
+        _levelCurrentNumber.SetActive(true);
+        _levelNextNumber.SetActive(true);
     }
 
     public override void HideScreen()
     {
-        _text.SetActive(false);
-        _touchPanel.SetActive(false);
-        _button.SetActive(false);
+        _slider.SetActive(false);
+        _levelCurrentNumber.SetActive(false);
+        _levelNextNumber.SetActive(false);
     }
-
 }

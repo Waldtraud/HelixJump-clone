@@ -11,6 +11,7 @@ public class LoseScreen : Screen
     private void Start()
     {
         EventManager.OnPlayerDied.AddListener(ShowScreen);
+        EventManager.OnAddPlatformBroke.RemoveListener(ShowScreen);
     }
     public override void ShowScreen()
     {
@@ -23,6 +24,4 @@ public class LoseScreen : Screen
         _slider.SetActive(false);
         _button.SetActive(false);
     }
-
-
 }

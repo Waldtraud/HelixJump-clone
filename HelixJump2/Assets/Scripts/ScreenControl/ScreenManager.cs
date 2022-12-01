@@ -5,8 +5,7 @@ using UnityEngine;
 public class ScreenManager : MonoBehaviour
 {
     private Screen _activScreen;
-    private List<Screen> _screens;   
-
+    private List<Screen> _screens;
 
     private void Start()
     {
@@ -71,6 +70,4 @@ public class ScreenManager : MonoBehaviour
             }
         }
     }
-
-
 }

@@ -4,59 +4,56 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    /* public Rigidbody rb;
-     /* [SerializeField] private float _radiusOfExplosion;
-      [SerializeField] private float _powerOfExplosion;
-     public PlatformDestruction _destruction;*/
     [SerializeField] private float _fallSpeed;
-    [SerializeField] private float _angleOfRotation;
-    public Transform[] sectors;
-    [SerializeField] private Vector3 CenterOfMovement;
-
-
-    /*private void Start()   
-    {
-        sectors =  new Transform[transform.childCount];
-        int i = 0;
-        foreach (Transform sector in sectors)
-        {
-            i++;
-        }
-        Debug.Log("Count: " + i);
-    }*/
+    [SerializeField] public int _platformToPass;
+    
+   
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Player player))
+        {
             player.CurrentPlatform = this;
+        }
+
     }
+
     private void OnTriggerExit(Collider other)
     {
-
-        if (other.transform.position.y < transform.position.y)
+        if (other.TryGetComponent(out Player player) && other.transform.position.y < transform.position.y)
         {
-            EventManager.SentBrokenPlatforms();                  
+            EventManager.SentBrokenPlatforms();
             FallDown();
-            
-           Destroy(this.gameObject, 0.5f);
+            Destroy(this.gameObject, 0.3f);
         }
     }
 
-    public void FallDown()
-    {       
+    
 
-            Rigidbody[] sectors = GetComponentsInChildren<Rigidbody>();
+
+    public void FallDown()
+    {
+        Rigidbody[] sectors = GetComponentsInChildren<Rigidbody>();
         for (int i = 0; i < sectors.Length; i++)
+
             if (sectors[i] != null)
             {
                 sectors[i].isKinematic = false;
                 sectors[i].AddForce(0, 0, _fallSpeed);
-               
             }
-       
+               }
+
+  /*  private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.TryGetComponent(out Player player))
+        {
+            Vector3 normal = collision.contacts[0].normal.normalized;
+            if (!_collider.bounds.Contains(normal))
+                _platformToPass--;
+        }
 
 
+    }*/
 
-    }
 }
 
 
