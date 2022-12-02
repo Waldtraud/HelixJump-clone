@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Sector : MonoBehaviour
 {
-    [SerializeField] private bool _isGood;
+    [SerializeField] public bool _isGood;
     [SerializeField] private Material _goodMaterial;
-    [SerializeField] private Material _badMaterial;    
+    [SerializeField] private Material _badMaterial;
     public Rigidbody _rigidbody;
+   
 
 
 
@@ -18,9 +19,9 @@ public class Sector : MonoBehaviour
 
     private void Start()
     {
-       _rigidbody.isKinematic = true;        
+        _rigidbody.isKinematic = true;
     }
-   
+
     private void UpdateMaterials()
     {
         Renderer sectorRenderer = GetComponent<Renderer>();
@@ -28,7 +29,7 @@ public class Sector : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-     {
+    {
         if (!collision.collider.TryGetComponent(out Player player))
             return;
 
@@ -37,8 +38,13 @@ public class Sector : MonoBehaviour
 
         if (dot < 0.5f) return;
 
-        if (!_isGood)
+        if (!_isGood )
+        {
+            player.Die();
+
             EventManager.SentPlayerDied();
+        }
+        
         else
             player.Bounce();
 

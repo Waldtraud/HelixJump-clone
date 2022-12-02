@@ -7,11 +7,12 @@ public class LoseScreen : Screen
 {
     [SerializeField] private GameObject _slider;
     [SerializeField] private GameObject _button;
+    [SerializeField] private Player player;
 
     private void Start()
     {
-        EventManager.OnPlayerDied.AddListener(ShowScreen);
-        EventManager.OnAddPlatformBroke.RemoveListener(ShowScreen);
+      EventManager.OnPlayerDied.AddListener(ShowScreen);
+        
     }
     public override void ShowScreen()
     {

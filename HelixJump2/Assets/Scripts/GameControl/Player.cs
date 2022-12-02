@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] public Game Game;
     [SerializeField] public Platform CurrentPlatform;
+    [SerializeField] private Sector _currentSector;
 
 
     private void Start()
@@ -23,30 +24,35 @@ public class Player : MonoBehaviour
         EventManager.OnPlayerReachFinish.AddListener(ReachFinish);
         EventManager.OnPlayerDied.AddListener(Die);
         EventManager.OnAddPlatformBroke.RemoveListener(Die);
+       
 
     }
 
     private void OnCollisionStay(Collision collision)
     {
          AddBounceSound();
-
     }
 
     private void OnCollisionEnter(Collision collision)
-    {       
-        currentContactPoint = collision.transform.position.y/3;
+    {
+        if (collision.collider.TryGetComponent(out Sector sector))
+        {
 
-        float distanceToPass = Mathf.Abs(currentContactPoint - lastContactPoint);
-        
-        if (distanceToPass > _levelGenerator._distanceBetweenPlatforms * _numberOfPassedPlatform)
-        {  
-                    
-            distanceToPass = 0;
-            CurrentPlatform.FallDown();
-            EventManager.SentAddPlatformBroke();
+            currentContactPoint = collision.transform.position.y / 3;
+
+            float distanceToPass = Mathf.Abs(currentContactPoint - lastContactPoint);
+
+            if (distanceToPass > _levelGenerator._distanceBetweenPlatforms * _numberOfPassedPlatform)
+            {
+
+                distanceToPass = 0;
+                CurrentPlatform.FallDown();
+                //EventManager.SentAddPlatformBroke();
+                sector._isGood = true;
+            }
+
+            lastContactPoint = currentContactPoint;
         }
-
-        lastContactPoint = currentContactPoint;        
     }
 
     public void Bounce()
@@ -55,6 +61,7 @@ public class Player : MonoBehaviour
     }
     public void Die()
     {
+       
         _playerBody.velocity = Vector3.zero;
 
     }

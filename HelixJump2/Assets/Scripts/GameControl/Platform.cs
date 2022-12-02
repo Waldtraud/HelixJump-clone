@@ -6,8 +6,8 @@ public class Platform : MonoBehaviour
 {
     [SerializeField] private float _fallSpeed;
     [SerializeField] public int _platformToPass;
-    
-   
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Player player))
@@ -27,8 +27,6 @@ public class Platform : MonoBehaviour
         }
     }
 
-    
-
 
     public void FallDown()
     {
@@ -40,20 +38,8 @@ public class Platform : MonoBehaviour
                 sectors[i].isKinematic = false;
                 sectors[i].AddForce(0, 0, _fallSpeed);
             }
-               }
-
-  /*  private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.TryGetComponent(out Player player))
-        {
-            Vector3 normal = collision.contacts[0].normal.normalized;
-            if (!_collider.bounds.Contains(normal))
-                _platformToPass--;
-        }
-
-
-    }*/
-
+        
+    }
 }
 
 

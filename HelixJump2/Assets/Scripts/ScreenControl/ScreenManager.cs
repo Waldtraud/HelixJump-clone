@@ -6,6 +6,7 @@ public class ScreenManager : MonoBehaviour
 {
     private Screen _activScreen;
     private List<Screen> _screens;
+    [SerializeField] private Player player;
 
     private void Start()
     {
@@ -28,6 +29,7 @@ public class ScreenManager : MonoBehaviour
 
     public void StartGame()
     {
+        
         _activScreen.HideScreen();
 
         foreach (var screen in _screens)
@@ -58,6 +60,7 @@ public class ScreenManager : MonoBehaviour
 
     public void LoseGame()
     {
+
         _activScreen.HideScreen();
 
         foreach (var screen in _screens)

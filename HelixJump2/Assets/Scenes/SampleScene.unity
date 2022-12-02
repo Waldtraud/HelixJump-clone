@@ -690,6 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e4177e3dfd25a42bae6f690dd26f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1613966658}
 --- !u!1 &281303153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,6 +1336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 1779974485}
   _button: {fileID: 2104730938}
+  player: {fileID: 1613966658}
 --- !u!1 &440616935
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,6 +3309,7 @@ MonoBehaviour:
   _playerBody: {fileID: 1613966657}
   Game: {fileID: 1541675273}
   CurrentPlatform: {fileID: 8704445594778501824, guid: e101412f7295acd4693a4385683989ac, type: 3}
+  _currentSector: {fileID: 0}
 --- !u!82 &1613966659
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3696,7 +3699,7 @@ MonoBehaviour:
   Player: {fileID: 1613966658}
   FinishPlatform: {fileID: 294403828}
   Slider: {fileID: 1779974488}
-  AccptebleFinishDistance: -13.81
+  AccptebleFinishDistance: -26
 --- !u!114 &1779974488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3931,9 +3934,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1613966658}
-  FinishPlatform: {fileID: 294403828}
+  FinishPlatform: {fileID: 6425075892945659011, guid: 6744a26603cbf5b41a79770763710f48, type: 3}
   Slider: {fileID: 1974642117}
-  AccptebleFinishDistance: -13.81
+  AccptebleFinishDistance: -26
 --- !u!114 &1974642117
 MonoBehaviour:
   m_ObjectHideFlags: 0
