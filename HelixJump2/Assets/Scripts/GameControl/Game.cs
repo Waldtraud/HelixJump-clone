@@ -6,9 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    [SerializeField] public Controls Control;
-    /*[SerializeField] private LevelGenerator _levelGenerator;
-    [SerializeField] private int _platformToPass;*/
+    [SerializeField] public Controls Control;    
     public State CurrentState { get; private set; }
     public enum State
     {
@@ -60,21 +58,5 @@ public class Game : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-   /* public void DestroyFourthPlatform()
-    {
-        GameObject[] platforms = _levelGenerator.GetPlatformsList();
-        int numberToDestroy;
-
-        for (var i = 0; i < platforms.Length; i++)
-        {
-
-            numberToDestroy = i + _platformToPass + 1;
-            Platform platformToDestroy = platforms[numberToDestroy].GetComponent<Platform>();
-
-            platformToDestroy.FallDown();
-            i = numberToDestroy;
-        }
-    }*/
-
-
+   
 }

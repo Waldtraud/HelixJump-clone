@@ -3639,8 +3639,8 @@ MonoBehaviour:
   - {fileID: 2696963245112691525, guid: a11849271218f4b47b55c1090a7615df, type: 3}
   - {fileID: 276044497778905259, guid: 85255502c9728c0408610dbcb6cce93e, type: 3}
   _firstPlatform: {fileID: 8315331715176531920, guid: e101412f7295acd4693a4385683989ac, type: 3}
-  _maxPlatforms: 15
-  _minPlatforms: 10
+  _maxPlatforms: 10
+  _minPlatforms: 7
   _finishPlatform: {fileID: 294403828}
   _cylinderLength: {fileID: 1203583444}
 --- !u!1 &1779974485

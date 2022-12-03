@@ -44,11 +44,10 @@ public class Player : MonoBehaviour
 
             if (distanceToPass > _levelGenerator._distanceBetweenPlatforms * _numberOfPassedPlatform)
             {
-
                 distanceToPass = 0;
-                CurrentPlatform.FallDown();
-                //EventManager.SentAddPlatformBroke();
                 sector._isGood = true;
+                CurrentPlatform.FallDown();             
+                
             }
 
             lastContactPoint = currentContactPoint;
