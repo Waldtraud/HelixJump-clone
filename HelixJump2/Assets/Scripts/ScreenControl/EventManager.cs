@@ -6,14 +6,14 @@ using System;
 
 public class EventManager 
 {
-    public static UnityEvent OnBrokenPlatformCount = new UnityEvent();
+    public static UnityEvent OnBrokenPlatform = new UnityEvent();
     public static UnityEvent OnPlayerDied = new UnityEvent();
     public static UnityEvent OnPlayerReachFinish = new UnityEvent();
     public static UnityEvent OnAddPlatformBroke = new UnityEvent();
 
     public static void SentBrokenPlatforms()
     {
-        OnBrokenPlatformCount.Invoke();
+        OnBrokenPlatform.Invoke();
     }
 
     public static void SentPlayerDied()

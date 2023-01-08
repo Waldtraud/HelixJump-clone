@@ -6,7 +6,7 @@ public class WinScreen : Screen
 {
  
     [SerializeField] private GameObject _button;    
-    [SerializeField] private GameObject _image;
+    
 
     private void Start()
     {
@@ -15,13 +15,13 @@ public class WinScreen : Screen
     public override void ShowScreen()
     {     
         _button.SetActive(true);      
-        _image.SetActive(true);
+       
     }
 
     public override void HideScreen()
     {    
         _button.SetActive(false);      
-        _image.SetActive(false);
+       
     }
 
 }

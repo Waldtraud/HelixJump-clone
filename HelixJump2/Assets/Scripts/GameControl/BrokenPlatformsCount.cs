@@ -9,7 +9,7 @@ public class BrokenPlatformsCount : MonoBehaviour
 
     private void Start()
     {
-        EventManager.OnBrokenPlatformCount.AddListener(CountPlatforms);
+        EventManager.OnBrokenPlatform.AddListener(CountPlatforms);
     }
 
     public void CountPlatforms()

@@ -14,11 +14,11 @@ PrefabInstance:
     - target: {fileID: 633460482221164332, guid: e101412f7295acd4693a4385683989ac, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ad10506bf4b700747b68ba00b25eedca, type: 2}
+      objectReference: {fileID: 2100000, guid: 9bcd89078f002654aa3edbc452fe1450, type: 2}
     - target: {fileID: 3329051535205150304, guid: e101412f7295acd4693a4385683989ac, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ad10506bf4b700747b68ba00b25eedca, type: 2}
+      objectReference: {fileID: 2100000, guid: 9bcd89078f002654aa3edbc452fe1450, type: 2}
     - target: {fileID: 3329051535205150310, guid: e101412f7295acd4693a4385683989ac, type: 3}
       propertyPath: _isGood
       value: 0
@@ -70,6 +70,10 @@ PrefabInstance:
     - target: {fileID: 8315331715176531920, guid: e101412f7295acd4693a4385683989ac, type: 3}
       propertyPath: m_Name
       value: Platform Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921142389786822892, guid: e101412f7295acd4693a4385683989ac, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e101412f7295acd4693a4385683989ac, type: 3}

@@ -7,11 +7,12 @@ public class Platform : MonoBehaviour
     private AudioSource _brokenPlatformSound;
     [SerializeField] private float _fallSpeed;
     [SerializeField] public int _platformToPass;
-
+   
 
     private void Start()
     {
-        _brokenPlatformSound = GetComponent<AudioSource>();
+        _brokenPlatformSound = GetComponent<AudioSource>();    
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,9 +48,10 @@ public class Platform : MonoBehaviour
             }
         }
         AddBrokenPlatformSound();
+        
     }
 
-    public void AddBrokenPlatformSound()
+    private void AddBrokenPlatformSound()
     {
         _brokenPlatformSound.Play();
     }
